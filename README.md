@@ -19,9 +19,10 @@ El análisis se desarrolló mediante un **flujo de trabajo reproducible utilizan
 1. Carga y revisión de los datos.
 2. Limpieza y preparación.
 3. Análisis exploratorio de las variables.
-4. Comparación del desempeño entre plantas.
-5. Creación de gráficos y dashboard con **Plotly**.
-6. Interpretación de los resultados.
+4. Aplicación de análisis estadístico mediante NumPy y SciPy.
+5. Comparación del desempeño entre plantas.
+6. Creación de gráficos y dashboard con **Plotly**.
+7. Interpretación de los resultados.
 
 ---
 
@@ -38,7 +39,37 @@ Las principales variables consideradas en el análisis fueron:
 
 ---
 
-## 4. Visualización de los datos
+## 4. Análisis estadístico con NumPy y SciPy
+
+Para complementar el análisis exploratorio se utilizaron **NumPy y SciPy** mediante scripts modulares, permitiendo separar las funciones estadísticas del notebook principal y facilitar la reutilización del código.
+
+### Análisis con NumPy
+
+Mediante **NumPy** se calcularon estadísticas descriptivas de la DBO de salida y la eficiencia de remoción de DBO.
+
+Los principales resultados fueron:
+
+* **DBO de salida promedio:** 36,18 mg/L.
+* **DBO de salida mínima:** 10,20 mg/L.
+* **DBO de salida máxima:** 79,00 mg/L.
+* **Eficiencia promedio de remoción de DBO:** 87,09 %.
+
+Estos resultados permiten conocer el comportamiento general de la DBO después del proceso de tratamiento y evaluar la reducción de la carga orgánica.
+
+### Análisis con SciPy
+
+Mediante **SciPy** se aplicó la correlación de Pearson para estudiar la relación entre las principales variables operacionales.
+
+Se obtuvieron los siguientes resultados:
+
+* **DBO de entrada vs. DBO de salida:** correlación fuerte y positiva (r = 0,759), estadísticamente significativa (p < 0,001).
+* **Caudal de entrada vs. DBO de salida:** correlación débil y positiva (r = 0,104), no estadísticamente significativa (p = 0,144).
+
+Los resultados indican que la DBO de entrada presenta una asociación lineal más clara con la DBO de salida, mientras que el caudal de entrada, considerado de forma individual, no muestra una relación lineal estadísticamente significativa con la DBO de salida.
+
+---
+
+## 5. Visualización de los datos
 
 Se construyó un **dashboard exploratorio** para comparar el desempeño de las plantas y analizar las relaciones entre las principales variables operacionales y ambientales.
 
@@ -51,21 +82,29 @@ Se construyó un **dashboard exploratorio** para comparar el desempeño de las p
 
 ---
 
-## 5. Resultados
+## 6. Resultados
 
-El análisis permite identificar diferencias en el desempeño de las plantas, detectar registros con niveles elevados de **DBO de salida** y observar posibles relaciones entre las variables operacionales y los incumplimientos de la normativa.
+El análisis permitió identificar diferencias en el desempeño de las plantas y registros con niveles elevados de **DBO de salida**.
 
-Las visualizaciones facilitan la comparación de los resultados y permiten reconocer situaciones que podrían requerir una mayor revisión operacional.
+El análisis estadístico mostró una **eficiencia promedio de remoción de DBO de 87,09 %**. Además, se identificó una **correlación fuerte y positiva entre la DBO de entrada y la DBO de salida (r = 0,759)**, mientras que el caudal de entrada presentó una correlación débil con la DBO de salida (r = 0,104).
+
+Las visualizaciones complementan estos resultados, facilitando la comparación del comportamiento de las plantas y la identificación de situaciones que podrían requerir una mayor revisión operacional.
 
 ---
 
-## 6. Conclusión
+## 7. Conclusión
 
-El uso de **Python y Plotly** permite analizar y visualizar los datos de AquaLimpia S. A. de forma reproducible, facilitando la identificación de patrones y apoyando la toma de decisiones.
+La aplicación de **scripts modulares** permitió organizar el análisis de AquaLimpia S. A. de manera estructurada y reutilizable, separando las funciones estadísticas y de procesamiento del notebook principal.
 
-El análisis de variables como el **caudal de entrada, DBO de entrada y salida, energía de aireación y cumplimiento normativo** permite comparar el desempeño de las distintas plantas e identificar posibles relaciones entre las condiciones operacionales y la calidad del efluente tratado.
+Mediante **NumPy** se obtuvieron estadísticas descriptivas y una eficiencia promedio de remoción de DBO de **87,09 %**, mientras que **SciPy** permitió determinar que existe una correlación fuerte y positiva entre la DBO de entrada y la DBO de salida (**r = 0,759**). Por otra parte, la relación entre el caudal de entrada y la DBO de salida fue débil y no estadísticamente significativa.
 
-De esta manera, los resultados obtenidos pueden contribuir a detectar situaciones de incumplimiento y orientar mejoras en la operación de las plantas.
+La integración de estos análisis con las visualizaciones desarrolladas en **Plotly** permite comprender mejor el comportamiento de las plantas y disponer de información que puede apoyar la revisión de su desempeño operacional y ambiental.
+
+---
+
+## 8. Herramientas utilizadas
+
+**Python | Pandas | NumPy | SciPy | Joblib | Plotly | Jupyter Notebook**
 
 ---
 
