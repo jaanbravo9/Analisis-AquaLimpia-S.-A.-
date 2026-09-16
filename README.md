@@ -108,4 +108,3 @@ La integración de estos análisis con las visualizaciones desarrolladas en **Pl
 
 ---
 
-**Herramientas utilizadas:** Python | Pandas | Plotly | Numpy | SciPy | Jupyter Notebook
